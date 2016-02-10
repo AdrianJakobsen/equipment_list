@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this,"ERROR", Toast.LENGTH_SHORT);
                     }
                 }catch (Exception ex){
-                    throw new Exception(ex.printStackTrace());
+                    Toast.makeText(MainActivity.this,"Exception", Toast.LENGTH_SHORT);
                 }
             }
         };
-        run.run();
+        new Thread(run).start();
     }
 
     private ArrayList<Equipment> createArrayList(String jsonString) {
